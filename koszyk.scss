@@ -1,0 +1,51 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+.container {
+    display: grid;
+    grid-template: 
+    "header" 10vh
+    "main" 80vh
+    "footer" 10vh / 1fr;
+
+    a {
+        text-decoration: none;
+        color: #000;
+        padding: 12px;
+        background: darkmagenta;
+        margin: 0 5px;
+    }
+
+    & > * {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .header {
+        background: blue;
+        font-size: 2em;
+        font-weight: bold;
+    }
+
+    .main {
+        background: darkgreen;
+
+        table {
+            background: #fff;
+        }
+
+        table,tr,th,td {
+            border: 1px solid #000;
+            border-collapse: collapse;
+            padding: 5px;
+        }
+    }
+
+    .footer {
+        background: crimson;
+    }
+}
