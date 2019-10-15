@@ -24,14 +24,26 @@
                     <th>Nazwisko klienta</th>
                 </tr>
                 <?php
+                    // $sql = "SELECT * FROM zamowienia,klienci WHERE zamowienia.id_klient = klienci.id_klient";
+                    // $query = $mysqli -> query($sql);
+                    // while($row = $query -> fetch_assoc()) {
+                    //     echo '<tr>';
+                    //     echo '<td>'.$row['data'].'</td><td>'.$row['imie'].'</td><td>'.$row['nazwisko'].'</td>';
+                    //     echo '</tr>';
+                    // }
+                ?>
+
+                <?php
                     $sql = "SELECT * FROM zamowienia,klienci WHERE zamowienia.id_klient = klienci.id_klient";
                     $query = $mysqli -> query($sql);
                     while($row = $query -> fetch_assoc()) {
-                        echo '<tr>';
-                        echo '<td>'.$row['data'].'</td><td>'.$row['imie'].'</td><td>'.$row['nazwisko'].'</td>';
-                        echo '</tr>';
-                    }
                 ?>
+                <tr>
+                    <td><?php echo $row['data'] ?></td>
+                    <td><?php echo $row['imie'] ?></td>
+                    <td><?php echo $row['nazwisko'] ?></td>
+                </tr>
+                <?php } ?>
             </table>
         </main>
         <footer class="footer"></footer>

@@ -25,6 +25,7 @@
                     <th>Ilość</th>
                     <th>Cena</th>
                 </tr>
+
                 <?php
                     $sql = "SELECT * FROM koszyk,klienci,produkty,zamowienia 
                     WHERE koszyk.id_zamowienie = zamowienia.id_zamowienie 
@@ -32,12 +33,16 @@
                     AND koszyk.id_produkt = produkty.id_produkt";
                     $query = $mysqli -> query($sql);
                     while($row = $query -> fetch_assoc()) {
-                        echo '<tr>';
-                        echo '<td>'.$row['imie'].'</td><td>'.$row['nazwisko'].'</td><td>'.$row['data'].'</td>
-                        <td>'.$row['nazwa'].'</td><td>'.$row['ilosc'].'</td><td>'.$row['ilosc'] * $row['koszt'].' zł</td>';
-                        echo '</tr>';
-                    }
                 ?>
+                <tr>
+                    <td><?php echo $row['imie'] ?></td>
+                    <td><?php echo $row['nazwisko'] ?></td>
+                    <td><?php echo $row['data'] ?></td>
+                    <td><?php echo $row['nazwa'] ?></td>
+                    <td><?php echo $row['ilosc'] ?></td>
+                    <td><?php echo $row['ilosc'] * $row['koszt'] ?></td>
+                </tr>
+                <?php } ?>
             </table>
         </main>
         <footer class="footer">

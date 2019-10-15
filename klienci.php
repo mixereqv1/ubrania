@@ -22,15 +22,18 @@
                     <th>Data urodzenia</th>
                     <th>Kraj</th>
                 </tr>
-                <?php
+                <?php  
                     $sql = "SELECT * FROM klienci";
                     $query = $mysqli -> query($sql);
                     while($row = $query -> fetch_assoc()) {
-                        echo '<tr>';
-                        echo '<td>'.$row['imie'].'</td><td>'.$row['nazwisko'].'</td><td>'.$row['data_urodzenia'].'</td><td>'.$row['kraj'].'</td>';
-                        echo '</tr>';
-                    }
                 ?>
+                <tr>
+                    <td><?php echo $row['imie'] ?></td>
+                    <td><?php echo $row['nazwisko'] ?></td>
+                    <td><?php echo $row['data_urodzenia'] ?></td>
+                    <td><?php echo $row['kraj'] ?></td>
+                </tr>
+                <?php } ?>
             </table>
         </main>
         <footer class="footer"><?php createMenu(); ?></footer>

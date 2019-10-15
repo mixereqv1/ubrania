@@ -21,15 +21,17 @@
                     <th>Nazwa</th>
                     <th>Cena</th>
                 </tr>
+
                 <?php
                     $sql = "SELECT * FROM produkty";
                     $query = $mysqli -> query($sql);
                     while($row = $query -> fetch_assoc()) {
-                        echo '<tr>';
-                        echo '<td>'.$row['nazwa'].'</td><td>'.$row['koszt'].' zł</td>';
-                        echo '</tr>';
-                    }
                 ?>
+                <tr>
+                    <td><?php echo $row['nazwa'] ?></td>
+                    <td><?php echo $row['koszt'] ?> zł</td>
+                </tr>
+                <?php } ?>
             </table>
         </main>
         <footer class="footer">
